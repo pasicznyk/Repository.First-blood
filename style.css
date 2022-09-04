@@ -1,0 +1,130 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  font-size: medium;
+  scroll-behavior: smooth;
+}
+
+
+:root{
+  --bg-color-1: rgb(209, 209, 209);
+  --bg-color-2: rgb(78, 78, 78);
+  --color-text: black;
+  --color-white: white;
+  --border: solid 1px black;
+  --border-radius: 15px;
+  --padding-main: 15px;
+}
+
+/* 
+background-color:;
+color:;
+border: var(--border);
+padding: var(--padding-main);
+*/
+
+
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  grid-template-rows: 0.05fr 1.5fr 1fr 0.05fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar grid-item-1 grid-item-2 grid-item-3"
+    "footer footer footer footer";
+  grid-gap: 0.2rem;
+}
+
+nav {
+  grid-area: nav;
+  color: var(--color-white);
+  background-color: var(--bg-color-2);
+  border: var(--border);
+  border-radius:  var(--border-radius);
+  padding: var(--padding-main);
+
+}
+
+.nav-x{
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-white);
+  font-size: 18px;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0;
+}
+
+
+.sidebar{
+  grid-area: sidebar;
+  background-color: var(--bg-color-1);
+  border: var(--border);
+  border-radius:  var(--border-radius);
+  padding: var(--padding-main);
+}
+
+main{
+  grid-area: main;
+  border: var(--border);
+  border-radius:var(--border-radius);
+  padding: var(--padding-main);
+}
+
+.grid-item-1 {
+  grid-area:grid-item-1;
+  border: var(--border);
+  border-radius:  var(--border-radius);
+  padding: var(--padding-main);
+}
+
+.grid-item-2 {
+  grid-area:grid-item-2;
+  border: var(--border);
+  border-radius:  var(--border-radius);
+  padding: var(--padding-main);
+}
+
+.grid-item-3 {
+  grid-area:grid-item-3;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--padding-main);
+  
+}
+footer{
+  grid-area:footer;
+  color: var(--color-white);
+  background-color: var(--bg-color-2);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--padding-main);
+  font-weight: lighter;
+  font-size: 14px;
+text-align: center;
+}
+
+
+@media only screen and (max-width: 660px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.15fr 1fr 1.8fr 1.2fr 1.2fr 1.2fr 0.15fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "grid-item-1"
+      "grid-item-2"
+      "grid-item-3"
+      "footer";
+  }
